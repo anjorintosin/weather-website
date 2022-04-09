@@ -8,7 +8,7 @@ const request = require('request')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-
+const port = process.env.PORT || 3000
 
 //define path for express config
 const publicDirectoryPath = path.join(__dirname, '../public') 
@@ -114,6 +114,6 @@ res.render('404', {
 })
 
 // Setting up server
-const PORT = 3000 || process.env
-app.listen(PORT, () =>{
-        console.log('connected to the server to port 3000')})
+
+app.listen(port, () =>{
+        console.log('connected to the server to port ' + port)})
